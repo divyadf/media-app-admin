@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Add new Product</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/fontawesome.min.css"></script>
+</head>
+<body>
+
+<div class="container">
+    <br>
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+  <!-- Brand -->
+  <a class="navbar-brand" href="/users/profile">Dashboard</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/users/profile">Home</a>
+      </li>
+      <% if( user.role == 'admin' ) { %>
+      <li class="nav-item">
+        <a class="nav-link" href="/users/addProduct">Add new</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/users/usersList">Users</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/users/userAdd">Add User</a>
+      </li>
+      <% } %>
+      <li class="nav-item">
+        <a class="nav-link" href="/users/logout">Logout</a>
+      </li>
+    </ul>
+  </div> 
+</nav>
+  <h2>Add new User</h2>
+  <form action="/users/addUser" method="POST">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="text" class="form-control" id="email" placeholder="Enter Email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" class="form-control" id="password" placeholder="Enter Password" name="password">
+    </div>
+    <div class="form-group">
+        <label for="price">Role:</label>
+        <select class="form-control" id="role" name="role">
+            <option value="admin">Admin</option>
+            <option value="normal">Normal</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add</button>
+    <a href="/" class="btn btn-success" role="button">cancel</a>
+  </form>
+</div>
+</body>
+</html>

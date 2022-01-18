@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login V2</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/fontawesome.min.css"></script>
+<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	<div class="container">
+		<br>
+	  <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+	  <!-- Brand -->
+	  <a class="navbar-brand" href="/users/profile">Update 24x7 Admin</a>
+	
+	  <!-- Toggler/collapsibe Button -->
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	
+	  <!-- Navbar links -->
+	  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+		<ul class="navbar-nav">
+		  <li class="nav-item">
+			<a class="nav-link" href="/">Sign In</a>
+		  </li>
+		</ul>
+	  </div> 
+	</nav>
+	<div class="main-page">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="limiter">
+				<div class="container-login100">
+					<div class="wrap-login100">
+						<form class="login100-form validate-form" action="/api/auth/register" method="POST">
+							
+								<h2>SignUp</h2>
+							
+							
+							<span class="login100-form-title p-b-53">
+								<i class="zmdi zmdi-font"></i>
+							</span>
+							<div class="form-group">
+								<label for="name">Name:</label>
+								<input class="form-control" type="text" name="name">
+								<span class="focus-form-control" data-placeholder="Name"></span>
+							</div>
+							<div class="form-group validate-input" data-validate = "Valid email is: a@b.c">
+								<label for="email">Email:</label>
+								<input class="form-control" type="text" name="email">
+								<span class="focus-form-control" data-placeholder="Email"></span>
+							</div>
+
+							<div class="form-group validate-input" data-validate="Enter password">
+								<label for="password">Password:</label>
+								<input class="form-control" type="password" name="password">
+								<span class="focus-form-control" data-placeholder="Password"></span>
+								<input type="hidden" name="role" value="admin"/>
+							</div>
+
+							<div class="container-login100-form-btn">
+								<div class="wrap-login100-form-btn">
+									<div class="login100-form-bgbtn"></div>
+									<button class="btn btn-primary" type="submit">
+										Sign Up
+									</button>
+									<a onclick="document.querySelector('form').reset()" class="btn btn-warning" role="button">RESET</a>
+								</div>
+							</div>
+
+							
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="limiter">
+				<div class="container-login100">
+					<div class="wrap-login100">
+						<form class="login100-form validate-form" action="/api/auth/login" method="POST">
+							<h2>Login</h2>
+							<span class="login100-form-title p-b-53">
+								<i class="zmdi zmdi-font"></i>
+							</span>
+							<p class="errr"><%=error%></p>
+							<p class="succ"><%=msg%></p>
+							<div class="form-group validate-input" data-validate = "Valid email is: a@b.c">
+								<label for="email">Email:</label>
+								<input class="form-control" type="text" name="email">
+								<span class="focus-form-control" data-placeholder="Email"></span>
+							</div>
+		
+							<div class="form-group validate-input" data-validate="Enter password">
+								<label for="password">Password:</label>
+								<input class="form-control" type="password" name="password">
+								<span class="focus-form-control" data-placeholder="Password"></span>
+							</div>
+		
+							<div class="container-login100-form-btn">
+								<div class="wrap-login100-form-btn">
+									<div class="login100-form-bgbtn"></div>
+									<button class="btn btn-success" type="submit">
+										Login
+									</button>
+									<a onclick="document.querySelector('form').reset()" class="btn btn-warning" role="button">RESET</a>
+								</div>
+							</div>
+		
+						</form>
+					</div>
+				</div>
+			</div>			
+		</div>
+	</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	</div>
+	
+<script src="js/main.js"></script>
+
+</body>
+</html>
